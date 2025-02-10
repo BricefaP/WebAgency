@@ -186,8 +186,6 @@ h1 {
     right: 50%;
 }
 
-
-
 .fa-circle {
     border: 5px solid #fff;
 }
@@ -201,6 +199,15 @@ h1 {
 
 .icon i {
     position: absolute;
-
     color: #70abcf;
+    animation: orbit 3s linear infinite;
 }
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
