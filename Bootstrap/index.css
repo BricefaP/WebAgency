@@ -137,7 +137,7 @@
 }
 
 #services p {
-    max-width: 60%;
+    max-width: 80%;
 }
 
 .nav-link:hover {
@@ -176,6 +176,15 @@ h1 {
     background-color: var(--bs-anis);
 }
 
+.line {
+    position: relative;
+    width: 200px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 5);
+    left: 42%;
+    top: 9%;
+}
+
 .circle {
     position: absolute;
     width: 20px;
@@ -195,19 +204,165 @@ h1 {
     width: 60px;
     border-radius: 50%;
     border: 1px solid #70abcf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.icon i {
-    position: absolute;
+.logo {
     color: #70abcf;
+    text-align: center;
+    z-index: 2;
+}
+
+.point {
+    color: #70abcf;
+    position: absolute;
+    background-color: #70abcf;
+    transform-origin: 10px -10px;
     animation: orbit 3s linear infinite;
 }
 
 @keyframes orbit {
-    from {
-        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    0% {
+        transform: rotate(0deg) translate(30px) rotate(0deg);
     }
 
-    to {
-        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    100% {
+        transform: rotate(360deg) translate(30px) rotate(-360deg);
     }
+}
+
+.nav_projets {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 40%;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.nav_projets a {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    width: 25%;
+    font-size: 1em;
+    color: #70abcf;
+    opacity: 1;
+}
+
+.nav_projets a:hover {
+    color: #fff;
+    background-color: #70abcf;
+    height: 4vh;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+}
+
+.nav_projets a:hover:after {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 50%;
+    margin-top: 15px;
+    margin-left: -14px;
+    width: 3px;
+    height: 0;
+    border-style: solid;
+    border-color: #70abcf transparent;
+    border-width: 10px 10px 0px 10px;
+}
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.album figure {
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.album figure img {
+    width: 300px;
+    display: block;
+}
+
+.album figure figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.35s;
+}
+
+.album figure a:hover+figcaption {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.fa-eye {
+    position: absolute;
+    top: -25px;
+    right: 26px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 80%;
+    border: 1px solid #fff;
+    background-color: #70abcf;
+    z-index: 5;
+}
+
+#contact {
+    position: relative;
+}
+
+iframe {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+form {
+    position: relative;
+    max-width: 300px;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0.9;
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+}
+
+.filtre {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(25, 25, 253, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#projets {
+    background: #fcfcfc;
+}
